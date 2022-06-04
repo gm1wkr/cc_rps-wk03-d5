@@ -1,0 +1,135 @@
+
+:root{
+    --color1: #001aff;
+    --color-light: #fff;
+    --background-1: rgba(0, 0, 0,  0.44);
+    --gradient-player-wins: linear-gradient(to right top, #41ae00, #3fc200, #38d600, #2cea00, #0cff00);
+    --gradient-computer-wins: linear-gradient(to right top, #f99a00, #fb8d00, #fd8000, #fe7200, #ff6200);
+    --gradient-draw: radial-gradient(circle, #0047ff, #253eff, #3932ff, #4a22ff, #5900ff);
+
+
+}
+html{
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--color1);
+    font-family: Roboto;
+    /* background-image: linear-gradient(to right top, #001aff, #ff009a, #ff002d, #fc9f00, #a8eb12); */
+    /* min-height: 100%; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+header, footer{
+    background-color: var(--background-1);
+    color: var(--color-light);
+    padding: 1rem 3rem;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+h1{
+
+}
+
+
+h1 > small{
+    margin-left: 2rem;
+}
+
+h1 > a{
+    text-decoration: none;
+    color: var(--color-light);
+}
+
+nav > ul{
+    list-style-type: none;
+    display: flex;
+}
+
+nav > ul > li {
+    color: #fff;
+    font-size: 2.2rem;
+}
+
+nav > ul > li > a{
+    color: #fff;
+    padding: 0.4rem 1.2rem;
+    transition: background-color 0.6s ease;
+    text-decoration: none;
+    background-color: #031783;
+}
+
+nav > ul > li > a:hover{
+    color: #000066;
+    background-color: #fff;
+}
+
+header > h1 {
+}
+
+
+
+main{
+    /* justify-self: center; */
+    flex: 1;
+    width: 76%;
+    margin: 0 auto;
+}
+
+main > section {
+    height: 100%
+}
+
+.winner_container{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+                        "player_1 player_2"
+                        "winner winner"
+    ;
+}
+
+.winner {
+    grid-area: winner;
+    
+}
+
+.player_1{
+    grid-area: player_1;
+}
+
+.player_2{
+    grid-area: player_2;
+}
+
+.draw{
+    background-image: var(--gradient-draw);
+    color: var(--color-light);
+}
+
+.computer-wins{
+    background-image: var(--gradient-computer-wins);
+    color: var(--color-light);
+}
+
+
+.player-wins{
+    background-image: var(--gradient-player-wins);
+    color: var(--color-light);
+}
+
+
+
+

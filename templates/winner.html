@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <section class="winner_container">
+        
+        <div class="player-1">
+            {{player_1.name.capitalize()}} chose {{ player_1.choice }}
+        </div>
+        
+        <div class="player-2">
+            {{player_2.name.capitalize()}} chose {{ player_2.choice }}
+        </div>
+
+        <div class="winner">
+        {% if winner.name %}
+                {% if winner.name == "computer" %}
+                    <div class="computer-wins">
+                        Computer Wins
+                        
+                    </div>
+                {% else %}
+                    <div class="player-wins">
+                        Congratulations {{ winner.name }} !
+                        
+                    </div>
+                {% endif %}
+                
+                {% else %}
+                <div class="draw">
+                    It was a draw
+                    
+                </div>
+                {% endif %}
+        </div>
+                
+
+    </section>
+
+{% endblock content %}
