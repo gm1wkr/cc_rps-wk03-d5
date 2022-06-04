@@ -7,10 +7,10 @@
 
     --background-1: rgba(0, 0, 0,  0.44);
 
-    --text-shadow-heading1: 4px 4px 2px black;
+    --text-shadow-heading1: 4px 4px 2px rgba(0, 0, 0, 0.533);
     
     --gradient-player-wins: linear-gradient(to right top, #41ae00, #3fc200, #38d600, #2cea00, #0cff00);
-    --gradient-computer-wins: linear-gradient(to right top, #f99a00, #fb8d00, #fd8000, #fe7200, #ff6200);
+    --gradient-computer-wins: radial-gradient(circle, #f99a00, #fb8d00, #fd8000, #fe7200, #ff6200);
     --gradient-draw: radial-gradient(circle, #0047ff, #253eff, #3932ff, #4a22ff, #5900ff);
 
 
@@ -116,6 +116,7 @@ main > section {
 
 .winner_container{
     height: 100%;
+    margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -125,6 +126,7 @@ main > section {
     ;
     justify-content: space-between;
     place-items: center;
+    border: 1px solid var(--color-dark)
 }
 
 .winner {
@@ -133,28 +135,28 @@ main > section {
 }
 
 .player-1, .player-2{
+    align-self: center;
     color:#fff;
-    background-color: #0047ff;
-    padding: 3rem 0;
+    padding: 0rem 0;
     width: 100%;
     text-align: center;
+    font-size: 1.6rem;
 }
 
 .player-1{
     grid-area: player_1;
+
 }
 
 .player-2{
     grid-area: player_2;
 }
 
-.draw{
-    background-image: var(--gradient-draw);
+.player-wins, .computer-wins, .draw{
     color: var(--color-light);
-}
-
-.player-wins, .computer-wins{
-    color: var(--color-light);
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: var(--text-shadow-heading1);
     width:auto;
     padding: 3rem 0;
 }
@@ -167,7 +169,35 @@ main > section {
 .player-wins{
     background-image: var(--gradient-player-wins);
 }
+.player-wins > .animate{
+    animation-name: winner-text;
+    animation-duration: 0.6s;
+    animation-iteration-count: 6;
+    animation-timing-function: ease;
+
+}
 
 
+.draw{
+    background-image: var(--gradient-draw);
+    color: var(--color-light);
+}
 
 
+@keyframes winner-text{
+    10% {
+        color: rgb(204, 255, 0);
+        transform: scale(1.2);
+        text-shadow: 3px 18px 4px rgba(0, 0, 0, 0.575);
+    }
+    40% {
+        color:#ffffff;
+        transform: scale(1);
+        text-shadow: var(--text-shadow-heading1);
+    }
+    100%{
+        color: unset;
+        transform: scale(1);
+        text-shadow: var(--text-shadow-heading1);
+    }
+}
