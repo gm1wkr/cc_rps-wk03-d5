@@ -1,20 +1,20 @@
 
 :root{
-    --color1: #FF3300;
-    --color2: #b32400;
-    --color3: #01b781;
+    --color1: #b32400;
+    --color2: #991f00;
+    --color3: #006644;
     --color-light: #fff;
     --color-medium: rgba(255, 255, 255, .8);
     --color-dark: rgba(255, 255, 255, .3);
 
-    --background-1: rgba(255, 124, 23, 0.906);
+    --background-1: #b32400;;
 
     --text-shadow-heading1: 2px 3px 4px rgba(0, 0, 0, 0.533);
     --box-shadow-light: 0px 3px 12px -2px rgba(0,0,0,0.97);
     --box-shadow-heavy: 0px 6px 11px -2px rgba(0,0,0,0.6);
     
-    --gradient-player-wins: linear-gradient(to right, #01ac0a, #5eff00,  #0cff00, #01ac0a);
-    --gradient-computer-wins: radial-gradient(circle, #f99a00, #fb8d00, #fd8000, #fe7200, #ff6200);
+    --gradient-player-wins: linear-gradient(to  top, #01ac0a,   #42cb3b, #01ac0a);
+    --gradient-computer-wins: radial-gradient(circle, #b32400,  #ff6200);
     --gradient-draw: radial-gradient(circle, #0047ff, #253eff, #3932ff, #4a22ff, #5900ff);
 
 
@@ -68,9 +68,17 @@ h1{
 }
 
 h2, h3{
-    margin-top: 2rem;
+    color:var(--color-light);
+    margin-top: 4rem;
+    letter-spacing: 0.1rem;
+    font-size: 1.6rem;
+    font-weight: 200;
+    text-shadow: var(--text-shadow-heading1);
 }
 
+h2:first-child{
+    margin-top: 1rem;
+}
 /* h1 > small{
     margin-left: 2rem;
     color: var(--color-medium)
@@ -78,8 +86,9 @@ h2, h3{
 
 p{
     font-size: 1.2rem;
-    line-height: 1.8rem;
-    color: var(--color-light)
+    line-height: 2.1rem;
+    color: var(--color-light);
+    margin: auto 3rem;
 }
 
 a{
@@ -229,6 +238,45 @@ main > section {
 }
 
 
+
+
+/* FORM Play computer */
+section.play{
+}
+form{
+    width: 24rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+    padding:0.6rem;
+    background-color: var(--color2);
+    color: var(--color-light);
+    display: flex;
+    border: 1px solid var(--color-medium);
+    flex-direction: column;
+    gap: 2rem;
+}
+
+label > span{
+    display: inline-block;
+    width: 40%;
+
+}
+ input, select{
+     padding: 0.4rem;
+ }
+ input[type="submit"]{
+     padding: 1.2rem;
+     width: 100%;
+ }
+
+
+@media only screen and (max-width: 860px){
+    
+    .player-wins, .computer-wins, .draw{
+        font-size: 2rem;
+        
+    }
+}
 @keyframes winner-text{
     100% {
         /* color: rgb(204, 255, 0); */
