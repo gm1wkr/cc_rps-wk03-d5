@@ -1,15 +1,19 @@
 
 :root{
-    --color1: #001aff;
+    --color1: #FF3300;
+    --color2: #b32400;
+    --color3: #01b781;
     --color-light: #fff;
     --color-medium: rgba(255, 255, 255, .8);
     --color-dark: rgba(255, 255, 255, .3);
 
-    --background-1: rgba(0, 0, 0,  0.44);
+    --background-1: rgba(255, 124, 23, 0.906);
 
-    --text-shadow-heading1: 4px 4px 2px rgba(0, 0, 0, 0.533);
+    --text-shadow-heading1: 2px 3px 4px rgba(0, 0, 0, 0.533);
+    --box-shadow-light: 0px 3px 12px -2px rgba(0,0,0,0.97);
+    --box-shadow-heavy: 0px 6px 11px -2px rgba(0,0,0,0.6);
     
-    --gradient-player-wins: linear-gradient(to right top, #41ae00, #3fc200, #38d600, #2cea00, #0cff00);
+    --gradient-player-wins: linear-gradient(to right, #01ac0a, #5eff00,  #0cff00, #01ac0a);
     --gradient-computer-wins: radial-gradient(circle, #f99a00, #fb8d00, #fd8000, #fe7200, #ff6200);
     --gradient-draw: radial-gradient(circle, #0047ff, #253eff, #3932ff, #4a22ff, #5900ff);
 
@@ -19,7 +23,7 @@ html{
     box-sizing: border-box;
 }
 body {
-    background-color: var(--color1);
+    background-color: var(--background-1);
     font-family: Roboto;
     letter-spacing: 0.06rem;
     /* background-image: linear-gradient(to right top, #001aff, #ff009a, #ff002d, #fc9f00, #a8eb12); */
@@ -42,9 +46,16 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: var(--box-shadow-heavy);
+    border-top: 1px solid var(--color-dark);ß
 
 }
 
+footer{
+    Font-weight:400;
+    text-align: center;
+    border-top: 1px solid var(--color-dark);
+}
 
 h1, .logo{
     margin: 0;
@@ -56,10 +67,24 @@ h1{
     text-shadow: var(--text-shadow-heading1)
 }
 
+h2, h3{
+    margin-top: 2rem;
+}
+
 /* h1 > small{
     margin-left: 2rem;
     color: var(--color-medium)
 } */
+
+p{
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: var(--color-light)
+}
+
+a{
+    color: var(--color-light)
+}
 
 .logo > a{
     text-decoration: none;
@@ -84,19 +109,34 @@ nav > ul > li > a{
     margin-left: 1rem;
     transition: background-color 0.6s ease;
     text-decoration: none;
-    background-color: #031783;
+    background-color: var(--color3);
     border: 1px solid var(--color-dark);
 }
 
 nav > ul > li > a:hover{
-    color: #000066;
+    color: #00B378;
     background-color: #fff;
     border-color: transparent;
 }
 
-@media only screen and (max-width: 960px){
+@media only screen and (max-width: 860px){
     header{
-
+        display:block;
+        text-align:center;
+    }
+    h1, .logo{
+        font-size: 1.6rem;
+    }
+    nav > ul{
+        display: flex;
+        justify-content: center;
+        padding:0;
+    }
+    nav > ul > li > a{
+        color: #fff;
+        font-weight: 300;
+        padding: 0.4rem 1.2rem;
+        margin-left: 1rem;
     }
 }
 
@@ -108,10 +148,12 @@ main{
     min-width: 60vw;
     margin: 0 auto;
     padding: 2rem;
+
 }
 
 main > section {
-    height: 100%
+    height: 100%;
+    color: var(var(--color-light))
 }
 
 .winner_container{
@@ -126,7 +168,10 @@ main > section {
     ;
     justify-content: space-between;
     place-items: center;
-    border: 1px solid var(--color-dark)
+    background-color: var(--color1);
+    border: 1px solid var(--color-dark);
+    box-shadow: var(--box-shadow-light);
+
 }
 
 .winner {
@@ -173,7 +218,7 @@ main > section {
     animation-name: winner-text;
     animation-duration: 0.6s;
     animation-iteration-count: 6;
-    animation-timing-function: ease;
+    animation-timing-function: cubic-bezier(0.92, 0.11, 0.45, 0.86);
 
 }
 
@@ -185,17 +230,17 @@ main > section {
 
 
 @keyframes winner-text{
-    10% {
-        color: rgb(204, 255, 0);
-        transform: scale(1.2);
-        text-shadow: 3px 18px 4px rgba(0, 0, 0, 0.575);
-    }
-    40% {
-        color:#ffffff;
+    100% {
+        /* color: rgb(204, 255, 0); */
         transform: scale(1);
         text-shadow: var(--text-shadow-heading1);
     }
-    100%{
+    50% {
+        color:#ffffff;
+        transform: scale(1.05);
+        text-shadow: 3px 18px 4px rgba(0, 0, 0, 0.575);
+    }
+    0%{
         color: unset;
         transform: scale(1);
         text-shadow: var(--text-shadow-heading1);
