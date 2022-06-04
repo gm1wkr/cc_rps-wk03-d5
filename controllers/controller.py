@@ -7,7 +7,7 @@ from models.player import Player
 
 @app.route("/")
 def index():
-    return render_template("index.html", title="CCC CodeClan_ Casino Welcome")
+    return render_template("index.html", title="Welcome")
 
 
 @app.route("/<player_1_choice>/<player_2_choice>")

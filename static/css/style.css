@@ -2,7 +2,13 @@
 :root{
     --color1: #001aff;
     --color-light: #fff;
+    --color-medium: rgba(255, 255, 255, .8);
+    --color-dark: rgba(255, 255, 255, .3);
+
     --background-1: rgba(0, 0, 0,  0.44);
+
+    --text-shadow-heading1: 4px 4px 2px black;
+    
     --gradient-player-wins: linear-gradient(to right top, #41ae00, #3fc200, #38d600, #2cea00, #0cff00);
     --gradient-computer-wins: linear-gradient(to right top, #f99a00, #fb8d00, #fd8000, #fe7200, #ff6200);
     --gradient-draw: radial-gradient(circle, #0047ff, #253eff, #3932ff, #4a22ff, #5900ff);
@@ -15,6 +21,7 @@ html{
 body {
     background-color: var(--color1);
     font-family: Roboto;
+    letter-spacing: 0.06rem;
     /* background-image: linear-gradient(to right top, #001aff, #ff009a, #ff002d, #fc9f00, #a8eb12); */
     /* min-height: 100%; */
     min-height: 100vh;
@@ -27,27 +34,36 @@ body {
 header, footer{
     background-color: var(--background-1);
     color: var(--color-light);
+    font-weight: 200;
     padding: 1rem 3rem;
 }
 
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
 }
 
+
+h1, .logo{
+    margin: 0;
+    font-weight: 100;
+    font-size: 2.1rem;
+}
 
 h1{
-
+    text-shadow: var(--text-shadow-heading1)
 }
 
-
-h1 > small{
+/* h1 > small{
     margin-left: 2rem;
-}
+    color: var(--color-medium)
+} */
 
-h1 > a{
+.logo > a{
     text-decoration: none;
+    text-shadow: var(--text-shadow-heading1);
     color: var(--color-light);
 }
 
@@ -58,32 +74,40 @@ nav > ul{
 
 nav > ul > li {
     color: #fff;
-    font-size: 2.2rem;
+    font-size: 1.2rem;
 }
 
 nav > ul > li > a{
     color: #fff;
+    font-weight: 300;
     padding: 0.4rem 1.2rem;
+    margin-left: 1rem;
     transition: background-color 0.6s ease;
     text-decoration: none;
     background-color: #031783;
+    border: 1px solid var(--color-dark);
 }
 
 nav > ul > li > a:hover{
     color: #000066;
     background-color: #fff;
+    border-color: transparent;
 }
 
-header > h1 {
-}
+@media only screen and (max-width: 960px){
+    header{
 
+    }
+}
 
 
 main{
     /* justify-self: center; */
     flex: 1;
-    width: 76%;
+    /* background-color: #000066; */
+    min-width: 60vw;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 main > section {
@@ -99,18 +123,28 @@ main > section {
                         "player_1 player_2"
                         "winner winner"
     ;
+    justify-content: space-between;
+    place-items: center;
 }
 
 .winner {
     grid-area: winner;
-    
+    width: 100%;
 }
 
-.player_1{
+.player-1, .player-2{
+    color:#fff;
+    background-color: #0047ff;
+    padding: 3rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+.player-1{
     grid-area: player_1;
 }
 
-.player_2{
+.player-2{
     grid-area: player_2;
 }
 
@@ -119,15 +153,19 @@ main > section {
     color: var(--color-light);
 }
 
+.player-wins, .computer-wins{
+    color: var(--color-light);
+    width:auto;
+    padding: 3rem 0;
+}
+
 .computer-wins{
     background-image: var(--gradient-computer-wins);
-    color: var(--color-light);
 }
 
 
 .player-wins{
     background-image: var(--gradient-player-wins);
-    color: var(--color-light);
 }
 
 

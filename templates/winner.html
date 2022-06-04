@@ -4,11 +4,11 @@
     <section class="winner_container">
         
         <div class="player-1">
-            {{player_1.name.capitalize()}} chose {{ player_1.choice }}
+            {{player_1.name.capitalize()}} chose {{ player_1.choice.capitalize() }}
         </div>
         
         <div class="player-2">
-            {{player_2.name.capitalize()}} chose {{ player_2.choice }}
+            {{player_2.name.capitalize()}} chose {{ player_2.choice.capitalize() }}
         </div>
 
         <div class="winner">
@@ -16,19 +16,19 @@
                 {% if winner.name == "computer" %}
                     <div class="computer-wins">
                         Computer Wins
-                        
+
                     </div>
                 {% else %}
                     <div class="player-wins">
                         Congratulations {{ winner.name }} !
-                        
+
                     </div>
                 {% endif %}
                 
                 {% else %}
                 <div class="draw">
                     It was a draw
-                    
+
                 </div>
                 {% endif %}
         </div>
