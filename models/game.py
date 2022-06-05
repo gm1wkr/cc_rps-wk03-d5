@@ -5,11 +5,6 @@ class Game:
     def __init__(self, player_1, player_2):
         self.player_1 = player_1
         self.player_2 = player_2
-        choices = ["rock", "paper", "scissors"]
-        random_choice = random.choice(self.choices)
-
-    def get_random_choice(self):
-        return self.random_choice
         
     def computer_player():
         return Player("computer", random.choice(["rock", "paper", "scissors"]))

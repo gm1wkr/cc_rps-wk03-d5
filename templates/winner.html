@@ -22,7 +22,7 @@
         </div>
 
         <div class="winner">
-        <!-- {% if winner.name %} -->
+        {% if winner.name %}
                 {% if winner.name == "computer" %}
                     <div class="computer-wins">
                         Computer Wins
@@ -30,15 +30,15 @@
                 {% else %}
                     <div class="player-wins">
                         <div class="animate">
-                            {{ winner.name }} WINS!
+                            &#127881;{{ winner.name }}&#127881; WINS!
                         </div>
                     </div>
                 {% endif %}
                 
-                {% else %}
-                <div class="draw">
-                    It was a draw
-                </div>
+            {% else %}
+            <div class="draw">
+                It was a draw
+            </div>
         {% endif %}
         </div>
     
